@@ -1,0 +1,128 @@
+{
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information"
+    }
+  },
+  "KafkaSettings": {
+    "TemplateVariables": {
+      "env": "local"
+    },
+    "DefaultClientConfig": {
+      "bootstrap.servers": "localhost:9092",
+      "message.max.bytes": "200000000",
+      "security.protocol": "plaintext",
+      "ssl.certificate.location": "",
+      "ssl.ca.location": "",
+      "ssl.key.location": ""
+    },
+    "DefaultConsumerSettings": {
+      "BufferSize": 5000,
+      "WaiterSettings": {
+        "RetryCount": 1,
+        "Interval": "00:00:01"
+      },
+      "SubscribeOverAssign": false,
+      "IndependentConfig": false,
+      "Config": {
+        "bootstrap.servers": "localhost:9092",
+        "group.id": "test-test4",
+        "auto.offset.reset": "earliest"
+      }
+    },
+    "DefaultProducerSettings": {
+      "IndependentConfig": false,
+      "Config": {
+        "bootstrap.servers": "localhost:9092",
+        "partitioner": "murmur2",
+        "acks": "all",
+        "message.timeout.ms": "20000"
+      }
+    },
+    "AdminClients": {
+      "localhost": {
+        "IndependentConfig": false,
+        "Config": {
+          "bootstrap.servers": "localhost:9092"
+        },
+        "DefaultTopicSettings": {
+          "PartitionCount": 1,
+          "ReplicaCount": 1,
+          "IndependentTopicConfig": false,
+          "TopicConfig": {
+            "cleanup.policy": "delete"
+          }
+        },
+        "Topics": [
+          {
+            "Name": "simple_string_string-${env}",
+            "PartitionCount": 1,
+            "ReplicaCount": 1,
+            "IndependentTopicConfig": false,
+            "TopicConfig": {
+              "cleanup.policy": "delete"
+            }
+          },
+          {
+            "Name": "default-topic-to-create",
+            "PartitionCount": 3
+          }
+        ]
+      },
+      "localhost-new": {
+        "Config": {
+          "bootstrap.servers": "localhost:9092"
+        },
+        "Topics": [
+          {
+            "Name": "default-topic-to-delete"
+          }
+        ]
+      }
+    },
+    "Consumers": {
+      "simple_string_string": {
+        "Topic": "simple_string_string-${env}",
+        "BufferSize": 5000,
+        "WaiterSettings": {
+          "RetryCount": 10,
+          "Interval": "00:00:01"
+        },
+        "SubscribeOverAssign": false,
+        "IndependentConfig": true,
+        "Config": {
+          "bootstrap.servers": "localhost:9092",
+          "group.id": "static_consumer_group_id37",
+          "auto.offset.reset": "latest"
+        }
+      },
+      "simple_string_object": {
+        "Topic": "simple_string_object-${env}"
+      },
+      "simple_string_avro_object": {
+        "Topic": "simple_string_avro_object-${env}"
+      },
+      "simple_string_protobuf_object": {
+        "Topic": "simple_string_protobuf_object-${env}"
+      }
+    },
+    "Producers": {
+      "simple_string_string": {
+        "Topic": "simple_string_string-${env}",
+        "IndependentConfig": false,
+        "Config": {
+          "bootstrap.servers": "localhost:9092"
+        }
+      },
+      "simple_string_object": {
+        "Topic": "simple_string_object-${env}"
+      },
+      "simple_string_avro_object": {
+        "Topic": "simple_string_avro_object-${env}"
+      },
+      "simple_string_protobuf_object": {
+        "Topic": "simple_string_protobuf_object-${env}"
+      }
+    }
+  }
+}

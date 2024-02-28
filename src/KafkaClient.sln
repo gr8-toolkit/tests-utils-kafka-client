@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{2BB7F038-6E48-4FEE-9EFF-B890C6EC47BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GR8Tech.TestUtils.KafkaClient", "GR8Tech.TestUtils.KafkaClient\GR8Tech.TestUtils.KafkaClient.csproj", "{FE478079-AC59-4EF5-B868-E0A9DDBEDEA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BB7F038-6E48-4FEE-9EFF-B890C6EC47BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB7F038-6E48-4FEE-9EFF-B890C6EC47BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB7F038-6E48-4FEE-9EFF-B890C6EC47BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB7F038-6E48-4FEE-9EFF-B890C6EC47BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE478079-AC59-4EF5-B868-E0A9DDBEDEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE478079-AC59-4EF5-B868-E0A9DDBEDEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE478079-AC59-4EF5-B868-E0A9DDBEDEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE478079-AC59-4EF5-B868-E0A9DDBEDEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

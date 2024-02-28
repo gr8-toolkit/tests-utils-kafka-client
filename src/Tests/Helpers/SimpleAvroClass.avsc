@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "SimpleAvroClass",
+  "namespace": "Tests.Helpers",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "int"
+    },
+    {
+      "name": "Name",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Apache.Avro" Version="1.11.3" />
+        <PackageReference Include="AvroSchemaGenerator" Version="2.9.2" />
+        <PackageReference Include="Confluent.SchemaRegistry" Version="2.3.0" />
+        <PackageReference Include="Confluent.SchemaRegistry.Serdes.Avro" Version="2.3.0" />
+        <PackageReference Include="Confluent.SchemaRegistry.Serdes.Protobuf" Version="2.3.0" />
+        <PackageReference Include="Ductus.FluentDocker" Version="2.10.59" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+        <PackageReference Include="NUnit" Version="3.14.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+        <PackageReference Include="NUnit.Analyzers" Version="3.10.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="6.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Update="test-settings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Remove="test-settings.json" />
+        <Content Include="test-settings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="test-settings-original.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Tests\test-settings.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GR8Tech.TestUtils.KafkaClient\GR8Tech.TestUtils.KafkaClient.csproj" />
+    </ItemGroup>
+
+</Project>
