@@ -12,7 +12,7 @@
       "bootstrap.servers": "localhost:9092",
       "message.max.bytes": "200000000",
       "security.protocol": "plaintext",
-      "ssl.certificate.location": "",
+      "ssl.certificate.location": "", 
       "ssl.ca.location": "",
       "ssl.key.location": ""
     },
